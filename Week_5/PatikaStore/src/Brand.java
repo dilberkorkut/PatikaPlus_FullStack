@@ -11,15 +11,15 @@ public class Brand implements Comparable<Brand> {
         ve static degisken yazdik. yeni bir notebook veya telefon eklemek istedigimizde markalar
         hazir ciksin. Java static gordugu kod bloklarini gorup calistirir.*/
 
-        brandTreeSet.add(new Brand(1, "Samsung"));
-        brandTreeSet.add(new Brand(2, "Lenovo"));
-        brandTreeSet.add(new Brand(3, "Apple"));
-        brandTreeSet.add(new Brand(4, "Huawei"));
-        brandTreeSet.add(new Brand(5, "Casper"));
-        brandTreeSet.add(new Brand(6, "Asus"));
-        brandTreeSet.add(new Brand(7, "HP"));
-        brandTreeSet.add(new Brand(8, "Xiaomi"));
-        brandTreeSet.add(new Brand(9, "Monster"));
+        brandTreeSet.add(new Brand(1, " Samsung"));
+        brandTreeSet.add(new Brand(2, " Lenovo"));
+        brandTreeSet.add(new Brand(3, " Apple"));
+        brandTreeSet.add(new Brand(4, " Huawei"));
+        brandTreeSet.add(new Brand(5, " Casper"));
+        brandTreeSet.add(new Brand(6, " Asus"));
+        brandTreeSet.add(new Brand(7, " HP"));
+        brandTreeSet.add(new Brand(8, " Xiaomi"));
+        brandTreeSet.add(new Brand(9, " Monster"));
     }
 
     @Override
@@ -28,12 +28,11 @@ public class Brand implements Comparable<Brand> {
     }
 
     public static void listBrands() {
-        int id = 0;
+
         for( Brand b : brandTreeSet) {
             System.out.println(b.getName() );
-            id ++;
-        }
 
+        }
     }
 
     public Brand(int id, String name) {

@@ -24,8 +24,9 @@ public class SmartphoneOperations {
     }
 
     public static void smartphoneMenu() {
-        boolean showMenu = true;
-        while(showMenu) {
+        boolean showPhoneMenu = true;
+        while(showPhoneMenu) {
+            System.out.println();
             System.out.println("Telefon Islemleri");
             System.out.println("---------------------------");
             System.out.println("1 - Telefonlari Listele");
@@ -33,7 +34,7 @@ public class SmartphoneOperations {
             System.out.println("3 - Yeni Telefon Ekle");
             System.out.println("4 - Telefon Sil");
             System.out.println("5 - Cikis");
-            System.out.println("---------------------------");
+            System.out.print("Lutfen bir islem seciniz : ");
 
             int selectPhoneOp = input.nextInt();
             switch (selectPhoneOp) {
@@ -47,26 +48,24 @@ public class SmartphoneOperations {
                     addSmartphone();
                     break;
                 case 4:
-                    deleteSmartphone();
+                    removeSmartphone();
                     break;
                 case 5 :
-                    showMenu = false;
+                    showPhoneMenu = false;
                     break;
                 default:
                     System.out.println("Gecersiz secim. Lutfen tekrar deneyiniz");
             }
-
         }
-
     }
 
     public static void printSmartphoneList() {
-
+        System.out.println();
         System.out.println("Telefon Listesi");
         System.out.println();
-        System.out.println("------------------------");
+        System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("ID | Urun Adi              |Fiyat        |Marka        |Depolama    |Ekran    |RAM");
-        System.out.println("------------------------");
+        System.out.println("-----------------------------------------------------------------------------------");
         for(Smartphone sp : smartphones) {
             System.out.println(" | " + sp.getId() + " | " + sp.getName() + " |" + sp.getBrandInfo() + " | " + sp.getStorage() + " | " + sp.getScreenSize() + " | " + sp.getRam() + " |");
         }
@@ -82,9 +81,12 @@ public class SmartphoneOperations {
     }
 
     public static void filterSmartphones() {
-        while(true) {
+        boolean isPhoneIdBrand = true;
+        while(isPhoneIdBrand) {
             System.out.println("1 - ID'ye gore filtrele");
             System.out.println("2 - Markaya gore filtrele");
+            System.out.println("3 - Notebook islemlerine geri donun");
+            System.out.print("Lutfen bir islem seciniz : ");
 
             int selection = input.nextInt();
             input.nextLine();
@@ -95,7 +97,11 @@ public class SmartphoneOperations {
                 case 2:
                     filterSmartphonesByBrand();
                     break;
+                case 3:
+                    smartphoneMenu();
+                    break;
                 default:
+                    isPhoneIdBrand = false;
                     System.out.println("Gecersiz secim. Lutfen tekrar deneyiniz");
             }
         }
@@ -110,23 +116,34 @@ public class SmartphoneOperations {
             filteredId = input.nextInt(); // gecerli bir id alinca dongu sonlaniyor.
         }
         Smartphone ss = smartphones.get(filteredId); // Kullanicidan alinan id'deki telefonu yeni bir nesneye atadik. yazdirabilmek icin.
-        System.out.println(ss.getId() + ss.getId() + ss.getName() + ss.getBrandInfo() + ss.getStorage() + ss.getScreenSize() + ss.getRam() );
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.println(" |" + ss.getId() + " |" + ss.getName() + "        |" + ss.getBrandInfo() + " | " + ss.getStorage() + " | " + ss.getScreenSize() + " | " + ss.getRam() + " |");
+        System.out.println("-----------------------------------------------------------------------------------");
+
     }
 
     public static void filterSmartphonesByBrand() {
         printSmartphoneList();
         System.out.println("Tercih ettiginiz marka : " );
         String filteredBrand = input.nextLine();
+        int counterPh = 0;
         for(Smartphone ph : smartphones) {
             if(ph.getBrandInfo().toLowerCase().equals(filteredBrand.toLowerCase())){
-                System.out.println(ph.getId() + ph.getId() + ph.getName() + ph.getBrandInfo() + ph.getStorage() + ph.getScreenSize() + ph.getRam() );
+                System.out.println();
+                System.out.println(" |" + ph.getId() + " |" + ph.getName() + "        |" + ph.getBrandInfo() + " | " + ph.getStorage() + " | " + ph.getScreenSize() + " | " + ph.getRam() + " |");
+            } else {
+                if (counterPh == 0) {
+                    System.out.println("Gecersiz bir secim. Lutfen tekrar deneyiniz!");
+                    counterPh++;
+                }
             }
         }
     }
 
-    public static void addSmartphone(){
+    public static void addSmartphone() {
 
-        System.out.println("Urun ID : ");
+        System.out.print("Urun ID : ");
         int id = input.nextInt();
 
         System.out.print("Urun Adi : ");
@@ -143,6 +160,7 @@ public class SmartphoneOperations {
 
         System.out.print("Depolama : ");
         int storage = input.nextInt();
+        input.nextLine(); // bos satir okuma
 
         System.out.print("Marka : ");
         String brandInfo = input.nextLine();
@@ -158,6 +176,8 @@ public class SmartphoneOperations {
 
         System.out.print("Pil Gucu : ");
         double batteryPower = input.nextDouble();
+        input.nextLine();
+
         System.out.print("Renk : ");
         String color = input.nextLine();
 
@@ -174,21 +194,22 @@ public class SmartphoneOperations {
                 storage, brandInfo, screenSize, ram, memory, batteryPower, color, camera ));
         //Smartphone newSmartphone = new Smartphone(newId, name, unitPrice, discountRate,
                // stockAmount, memory, brandInfo, screenSize, ram, batteryPower, color, camera);
-
+        printSmartphoneList();
+        System.out.println("-----------------------------------------------------------------------------------");
     }
 
-    public static void deleteSmartphone() {
+    public static void removeSmartphone() {
         printSmartphoneList();
+
         System.out.println("Silmek istediginiz urunu seciniz : ");
-        int id = input.nextInt();
+        int id = input.nextInt() -1;
         while(id < 0 || id > smartphones.size()) {
             System.out.println("Hatali id girdiniz. Lutfen tekrar deneyiniz.");
-            id = input.nextInt();
+            id = input.nextInt() -1;
         }
         smartphones.remove(id);
+        printSmartphoneList();
     }
-
-
 }
 
 
