@@ -1,11 +1,11 @@
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args, Object sayilar) {
+    public static void main(String[] args) {
         //Dosya Olusturma
         File file = new File("sayilar.txt");
         if(file.exists()) {
-            System.out.println("DOsya mevcut");
+            System.out.println("Dosya mevcut");
         } else {
             System.out.println("Dosya mevcut degil");
         }
@@ -13,7 +13,7 @@ public class Main {
 
         try {
            FileWriter fileWriter = new FileWriter(file, false);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+           BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
             bufferedWriter.write("5");
             bufferedWriter.newLine();
@@ -36,7 +36,8 @@ public class Main {
                 sum += Integer.parseInt(line);
             }
             bufferedReader.close();
-            System.out.println(" Toplam : " + sum);
+
+            System.out.println("Toplam : " + sum);
 
         } catch(IOException e) {
             throw new RuntimeException(e);
