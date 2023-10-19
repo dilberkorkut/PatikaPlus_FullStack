@@ -16,13 +16,16 @@ public class JDBC {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
 
             while (resultSet.next()) {
+                System.out.println(resultSet.getInt("id"));
                 System.out.println(resultSet.getString("name"));
+                System.out.println(resultSet.getString("position"));
+                System.out.println(resultSet.getString("salary"));
 
             }
             connection.close();
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
     }
 }
