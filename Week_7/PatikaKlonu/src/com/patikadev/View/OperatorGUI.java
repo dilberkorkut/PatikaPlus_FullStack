@@ -310,9 +310,8 @@ public class OperatorGUI extends JFrame { // biz bunu JFrameden uretiyoruz.
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
-
-
         });
+
         btn_logout.addActionListener(e -> {
             dispose(); // varoldugu cagrildigi frame'i kapatir. kapatma islemini yapar
             LoginGUI login = new LoginGUI();
@@ -330,7 +329,6 @@ public class OperatorGUI extends JFrame { // biz bunu JFrameden uretiyoruz.
                 } else {
                     Helper.showMsg("error");
                 }
-
             }
 
         });
@@ -369,13 +367,7 @@ public class OperatorGUI extends JFrame { // biz bunu JFrameden uretiyoruz.
                     }
                 }
             }
-
         });
-
-
-
-
-
     }
 
     public void loadCourseModel() {

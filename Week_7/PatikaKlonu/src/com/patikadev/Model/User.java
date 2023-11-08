@@ -74,7 +74,7 @@ public class User { // veri tabanindan aldigimiz tum degerleri nesnelestirmis ol
         String query = "INSERT INTO user (name, uname, password, type) VALUES (?,?,?,?)"; //query adinda sql sorgusu olusturuyoruz/?=>preparedStatement
         User findUser = User.getFetch(uname); //User.getFetch(uname) ile veri tabaninda daha once ayni uname ile kayitli bir user olup olmadigini kontrol edilir.
         if(findUser != null) { // eger ayni kullanici adi varsa hata mesaji alir.
-            Helper.showMsg("Bu kullanici adi daha once eklenmistir. Lutfen farkli bir kullanici adi giriniz.");
+            Helper.showMsg("Bu kullanici adi daha once kullanildi, yeni bir tane deneyiniz!");
             return false; // ve false dondurulur.
         }
         try {
