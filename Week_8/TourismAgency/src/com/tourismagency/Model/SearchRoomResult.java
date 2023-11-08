@@ -299,7 +299,6 @@ public class SearchRoomResult {
 
         return query;
     }
-
 }
 
 
