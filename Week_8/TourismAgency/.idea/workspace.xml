@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/DBConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Agency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.java" beforeDir="false" />
-    </list>
+    <list default="true" id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +18,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
