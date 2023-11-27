@@ -1,6 +1,7 @@
 package dev.patika.library.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,13 +20,16 @@ public class Publisher {
     @Column(name = "publisher_id", columnDefinition = "serial")
     private Long id;
 
-    @Column(name = "publisher_name" , nullable = false)
+    @NotNull
+    @Column(name = "publisher_name")
     private String name;
 
-    @Column(name = "publisher_establishment_year", nullable = false)
+    @NotNull
+    @Column(name = "publisher_establishment_year")
     private Integer establishmentYear;
 
-    @Column(name = "publisher_address", nullable = false)
+    @NotNull
+    @Column(name = "publisher_address")
     private String address;
 
     // bir yayin evinin birden cok kitabi olabilir.

@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookSaveRequest {
-
-    @NotNull
-    @NotEmpty
     private String name;
     private int publicationYear;
     private int stock;

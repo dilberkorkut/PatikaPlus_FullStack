@@ -3,10 +3,12 @@ package dev.patika.library.business.concretes;
 import dev.patika.library.business.abstracts.IBookBorrowingService;
 import dev.patika.library.dao.BookBorrowingRepo;
 import dev.patika.library.entities.BookBorrowing;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookBorrowingManager implements IBookBorrowingService {
+    @Autowired
     private final BookBorrowingRepo bookBorrowingRepo;
 
     public BookBorrowingManager(BookBorrowingRepo bookBorrowingRepo) {

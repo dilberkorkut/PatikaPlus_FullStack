@@ -1,6 +1,7 @@
 package dev.patika.library.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,10 +20,12 @@ public class Category {
     @Column (name = "category_id", columnDefinition = "serial")
     private Long id;
 
-    @Column (name = "category_name", nullable = false)
+    @NotNull
+    @Column (name = "category_name")
     private String categoryName;
 
-    @Column (name = "category_description", nullable = false)
+    @NotNull
+    @Column (name = "category_description")
     private String categoryDescription;
 
 

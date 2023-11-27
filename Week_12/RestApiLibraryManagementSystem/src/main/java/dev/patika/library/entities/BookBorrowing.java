@@ -1,6 +1,7 @@
 package dev.patika.library.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,13 +21,18 @@ public class BookBorrowing {
     @Column (name = "borrower_id", columnDefinition = "serial")
     private Long id;
 
-    @Column (name = "borrower_name", nullable = false)
+    @NotNull
+    @Column (name = "borrower_name")
     private String borrowerName;
 
-    @Column (name = "borrow_date", nullable = false)
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    @Column (name = "borrow_date")
     private LocalDate borrowingDate;
 
-    @Column (name = " return_date", nullable = false)
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    @Column (name = " return_date")
     private LocalDate returnDate;
 
     // bir kitabin birden fazla odunc alinma senaryosu olabilir.
