@@ -6,6 +6,8 @@ import dev.patika.library.entities.BookBorrowing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookBorrowingManager implements IBookBorrowingService {
     @Autowired
@@ -16,7 +18,35 @@ public class BookBorrowingManager implements IBookBorrowingService {
     }
 
     @Override
+    public BookBorrowing getById(int id) {
+        return this.bookBorrowingRepo.findById(id).orElseThrow();
+    }
+
+    @Override
     public BookBorrowing save(BookBorrowing bookBorrowing) {
+//        if (bookBorrowing.getBook().getStock() < 1) {
+//            throw new RuntimeException();
+//        } else{
+//            return this.bookBorrowingRepo.save(bookBorrowing);
+//        }
         return this.bookBorrowingRepo.save(bookBorrowing);
+    }
+
+
+    @Override
+
+    public BookBorrowing update(BookBorrowing bookBorrowing) {
+        return this.bookBorrowingRepo.save(bookBorrowing);
+    }
+
+    @Override
+    public void delete(int id) {
+        this.bookBorrowingRepo.delete(this.getById(id));
+
+    }
+
+    @Override
+    public List<BookBorrowing> findAll() {
+        return this.bookBorrowingRepo.findAll();
     }
 }

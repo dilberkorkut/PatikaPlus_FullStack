@@ -1,5 +1,6 @@
 package dev.patika.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -37,6 +38,7 @@ public class Publisher {
     // eger bir yazara ait bir kitabi silersek ve ona ait 5 kitap anlamsiz olacak. cascade remove ile kitaplari da kaldirmis oluruz.
     //eger cascade.All dersek bir yazari guncelledigimde ona ait kitap verilerinin de guncellediggini anlamis oluruz.
     @OneToMany (mappedBy = "publisher", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private List<Book> books;
 
 }

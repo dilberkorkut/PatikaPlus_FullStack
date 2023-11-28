@@ -1,5 +1,6 @@
 package dev.patika.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class BookBorrowing {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "borrower_id", columnDefinition = "serial")
+    @Column (name = "borrower_id", insertable = false , columnDefinition = "serial")
     private Long id;
 
     @NotNull
@@ -38,9 +39,7 @@ public class BookBorrowing {
     // bir kitabin birden fazla odunc alinma senaryosu olabilir.
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "borrow_book_id", referencedColumnName = "book_id")
+    @JsonIgnore
     private Book book;
-
-
-
 
 }

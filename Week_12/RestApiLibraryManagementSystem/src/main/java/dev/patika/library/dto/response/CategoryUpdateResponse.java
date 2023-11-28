@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategorySaveResponse {
-    private int category_id;
+public class CategoryUpdateResponse {
+    private int id;
     private String categoryName;
     private String description;
 }

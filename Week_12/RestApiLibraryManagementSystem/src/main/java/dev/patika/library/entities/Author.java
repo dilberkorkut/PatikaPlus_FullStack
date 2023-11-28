@@ -1,5 +1,6 @@
 package dev.patika.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,7 @@ public class Author {
     @Column(name = "author_name")
     private String name;
 
+
     @NotNull
     @Temporal(TemporalType.DATE)
     @Column(name = "author_birthdate")
@@ -36,7 +38,9 @@ public class Author {
 
     // bir yazarin bircok kitabi var. o halde kitap listesi tutabiliriz.
     //mappedBy = "author yazdik cunku Author sinifindan author nesnesi olusturduk.Author yazar deseydik yazar diyecektik.
+
     @OneToMany (mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private List<Book> bookList;
 
 }

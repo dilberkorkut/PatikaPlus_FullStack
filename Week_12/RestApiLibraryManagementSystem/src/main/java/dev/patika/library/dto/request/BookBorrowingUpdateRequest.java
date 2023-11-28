@@ -10,9 +10,11 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookBorrowingSaveRequest {
+public class BookBorrowingUpdateRequest {
+    private int id;
     private String borrowerName;
     private LocalDate borrowingDate;
     private LocalDate returnDate;
-    private Book book;
+
+
 }

@@ -1,5 +1,6 @@
 package dev.patika.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -28,8 +29,8 @@ public class Category {
     @Column (name = "category_description")
     private String categoryDescription;
 
-
     @ManyToMany(mappedBy = "categoryList",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private List<Book> books;
 
 }

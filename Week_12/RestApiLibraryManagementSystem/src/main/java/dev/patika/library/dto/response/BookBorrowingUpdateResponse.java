@@ -1,4 +1,4 @@
-package dev.patika.library.dto.request;
+package dev.patika.library.dto.response;
 
 import dev.patika.library.entities.Book;
 import lombok.AllArgsConstructor;
@@ -10,9 +10,10 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookBorrowingSaveRequest {
-    private String borrowerName;
+public class BookBorrowingUpdateResponse {
+    private int id;
     private LocalDate borrowingDate;
     private LocalDate returnDate;
     private Book book;
+
 }

@@ -1,5 +1,6 @@
 package dev.patika.library.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class Book {
 
     // birden cok kitabin bir yazari olabilir. bire cok iliski. one-yazar, many-kitap tarafi.
     @ManyToOne(fetch = FetchType.EAGER) // eger gereksizse join sorgusu yapmamak ve gelecek veriyi kisitlamak icin fetch kullaniyorum. author id sini istedigimiz icin eager
-    @JoinColumn(name = "book_author_id", referencedColumnName = "author_id" ) // eger yukarida book_id yerine id diye isimlendirseydik referans noktasina gerek kalmayacakti.
+    @JoinColumn(name = "author_id", referencedColumnName = "author_id" ) // eger yukarida book_id yerine id diye isimlendirseydik referans noktasina gerek kalmayacakti.
     private Author author;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -53,6 +54,7 @@ public class Book {
             name = "book2category", // yeni olusacak tablo adi
             joinColumns = {@JoinColumn(name = "book2category_book_id")},
             inverseJoinColumns = {@JoinColumn (name = "book2category_category_id")})
+    @JsonIgnore
     private List<Category> categoryList;
 
 
