@@ -24,12 +24,14 @@ public class BookBorrowingManager implements IBookBorrowingService {
 
     @Override
     public BookBorrowing save(BookBorrowing bookBorrowing) {
-//        if (bookBorrowing.getBook().getStock() < 1) {
-//            throw new RuntimeException();
-//        } else{
-//            return this.bookBorrowingRepo.save(bookBorrowing);
-//        }
-        return this.bookBorrowingRepo.save(bookBorrowing);
+        if (bookBorrowing.getBook().getStock() < 1) {
+            throw new RuntimeException();
+        } else{
+            bookBorrowing.getBook().setStock(bookBorrowing.getBook().getStock() - 1);
+            return this.bookBorrowingRepo.save(bookBorrowing);
+
+        }
+        //return this.bookBorrowingRepo.save(bookBorrowing);
     }
 
 

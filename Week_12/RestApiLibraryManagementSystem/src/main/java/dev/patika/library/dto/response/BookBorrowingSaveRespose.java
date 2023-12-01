@@ -1,5 +1,6 @@
 package dev.patika.library.dto.response;
 
+import dev.patika.library.entities.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,4 +15,5 @@ public class BookBorrowingSaveRespose {
     private String borrowerName;
     private LocalDate borrowingDate;
     private LocalDate returnDate;
+
 }
