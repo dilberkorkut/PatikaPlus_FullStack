@@ -26,7 +26,7 @@ public class BookBorrowingManager implements IBookBorrowingService {
     public BookBorrowing save(BookBorrowing bookBorrowing) {
 
         if (bookBorrowing.getBook().getStock() < 1) {
-            throw new RuntimeException();
+            throw new RuntimeException("stok bulunamamistir.");
         } else {
             bookBorrowing.getBook().setStock(bookBorrowing.getBook().getStock() - 1);
             return this.bookBorrowingRepo.save(bookBorrowing);
