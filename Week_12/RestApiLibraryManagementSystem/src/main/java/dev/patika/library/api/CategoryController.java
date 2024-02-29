@@ -45,12 +45,12 @@ public class CategoryController {
 
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Category update(@Valid @RequestBody CategoryUpdateRequest categoryUpdateRequest) {
         Category newCategory = this.categoryService.getById(categoryUpdateRequest.getId());
         newCategory.setCategoryName(categoryUpdateRequest.getCategoryName());
-        newCategory.setCategoryDescription(categoryUpdateRequest.getDescription());
+        newCategory.setCategoryDescription(categoryUpdateRequest.getCategoryDescription());
         return this.categoryService.update(newCategory);
     }
 

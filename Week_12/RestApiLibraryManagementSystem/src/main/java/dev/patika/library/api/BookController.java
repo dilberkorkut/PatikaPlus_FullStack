@@ -52,7 +52,6 @@ public class BookController {
 //        publisher.setId((long) bookSaveRequest.getPublisher_id());
 //        newBook.setPublisher(publisher);
         return this.bookService.save(newBook);
-
     }
 
     @PutMapping()
@@ -68,7 +67,6 @@ public class BookController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") int id) {
         this.bookService.delete(id);
-
     }
 }
 

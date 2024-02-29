@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class CategoryUpdateRequest {
     private int id;
     private String categoryName;
-    private String description;
+    private String categoryDescription;
 }

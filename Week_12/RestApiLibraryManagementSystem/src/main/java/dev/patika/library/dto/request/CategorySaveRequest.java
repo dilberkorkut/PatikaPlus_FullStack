@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CategorySaveRequest {
     private String categoryName;
-    private String description;
+    private String categoryDescription;
 }
