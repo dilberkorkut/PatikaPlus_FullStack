@@ -45,10 +45,10 @@ public class PublisherController {
         return this.publisherService.save(newPublisher);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Publisher update(@Valid @RequestBody PublisherUpdateRequest publisherUpdateRequest) {
-        Publisher newPublisher = this.publisherService.getById(publisherUpdateRequest.getId());
+    public Publisher update(@PathVariable int id, @Valid @RequestBody PublisherUpdateRequest publisherUpdateRequest) {
+        Publisher newPublisher = this.publisherService.getById(id);
         newPublisher.setName(publisherUpdateRequest.getName());
         newPublisher.setEstablishmentYear(publisherUpdateRequest.getEstablishmentYear());
         return this.publisherService.update(newPublisher);
