@@ -42,13 +42,13 @@ public class AuthorController {
         return this.authorService.save(newAuthor);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Author update(@Valid @RequestBody AuthorUpdateRequest authorUpdateRequest) {
-        Author newAuthor = this.authorService.getById(authorUpdateRequest.getId());
-        newAuthor.setName(authorUpdateRequest.getAuthorName());
-        newAuthor.setBirthDate(authorUpdateRequest.getAuthorBirthdate());
-        newAuthor.setCountry(authorUpdateRequest.getAuthorCountry());
+    public Author update(@PathVariable int id, @Valid @RequestBody AuthorUpdateRequest authorUpdateRequest) {
+        Author newAuthor = this.authorService.getById(id);
+        newAuthor.setName(authorUpdateRequest.getName());
+        newAuthor.setBirthDate(authorUpdateRequest.getBirthDate());
+        newAuthor.setCountry(authorUpdateRequest.getCountry());
         return this.authorService.update(newAuthor);
     }
 

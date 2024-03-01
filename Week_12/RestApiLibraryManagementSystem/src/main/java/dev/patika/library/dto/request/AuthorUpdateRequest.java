@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class AuthorUpdateRequest {
     private int id;
-    private String authorName;
-    private LocalDate authorBirthdate;
-    private String authorCountry;
+    private String name;
+    private LocalDate birthDate;
+    private String country;
 }

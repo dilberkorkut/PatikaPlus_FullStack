@@ -54,6 +54,8 @@ public class PublisherController {
         return this.publisherService.update(newPublisher);
     }
 
+
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") int id) {
         this.publisherService.delete(id);
